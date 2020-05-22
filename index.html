@@ -3331,33 +3331,10 @@
                                                     <div role="tabpanel" class="tab-pane active" id="home">
                                                         <div class="simplesearch row">
                                                             <div class="searchbottom">
-                                                                <div class="calendar-icon program-icon"
-                                                                    data-icon="program-icon"></div>
-                                                                <div class="calendar-year">
-                                                                    <h4>program<sup>*</sup></h4>
-                                                                    <div id="programWarning" class="warningMsg"
-                                                                        style="display: none;"></div>
-                                                                    <div class="autocomplete input-group"
-                                                                        dd-menu="5197283418683130000" selected=""><input
-                                                                            type="text" id="txtProgram_SimpleSearch"
-                                                                            class="searchtext lookup form-control"
-                                                                            placeholder="(eg., NEU-MBA)" maxlength="20"
-                                                                            autocomplete="off"><span
-                                                                            class="input-group-btn"><button
-                                                                                class="btn btn-default" type="button"
-                                                                                tabindex="-1"><span
-                                                                                    class="fa fa-caret-down"></span></button></span>
-                                                                    </div>
-                                                                    <input type="hidden" value="" id="hdnSimpleProgID">
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="searchbottom">
                                                                 <div class="calendar-icon term-icon"
                                                                     data-icon="term-icon"></div>
                                                                 <div class="calendar-year">
-                                                                    <h4>term<sup>*</sup></h4>
+                                                                    <h4>Term Rollup<sup>*</sup></h4>
                                                                     <div id="termWarning" class="warningMsg"
                                                                         style="display: none;"></div>
                                                                     <div class="autocomplete input-group"
@@ -3365,7 +3342,7 @@
                                                                             type="text" id="txtTerm_SimpleSearch"
                                                                             class="searchtext form-control"
                                                                             placeholder="(eg., SP1)" maxlength="20"
-                                                                            autocomplete="off"><span
+                                                                            autocomplete="off" value="SP1 20"><span
                                                                             class="input-group-btn"><button
                                                                                 class="btn btn-default" type="button"
                                                                                 tabindex="-1"><span
@@ -3376,7 +3353,7 @@
 
                                                             </div>
 
-                                                            <div class="searchbottom">
+                                                            <!-- <div class="searchbottom">
                                                                 <div class="calendar-icon subprogram-icon"
                                                                     data-icon="subprogram_no">
                                                                 </div>
@@ -3404,7 +3381,157 @@
                                                                     </form>
 
                                                                 </div>
+                                                            </div> -->
+
+                                                            <div class="searchbottom">
+                                                                <div class="calendar-icon term-icon"
+                                                                    data-icon="term-icon"></div>
+                                                                <div class="calendar-year">
+                                                                    <h4>Program<sup>*</sup></h4>
+                                                                    <div id="termWarning" class="warningMsg"
+                                                                        style="display: none;"></div>
+                                                                    <div class="autocomplete input-group"
+                                                                        dd-menu="7841730753683416000" selected=""><input
+                                                                            type="text" id="txtTerm_SimpleSearch"
+                                                                            class="searchtext form-control"
+                                                                            placeholder="(eg., MVU-MBA)" maxlength="20"
+                                                                            autocomplete="off" value="MMU-MBA"><span
+                                                                            class="input-group-btn"><button
+                                                                                class="btn btn-default" type="button"
+                                                                                tabindex="-1"><span
+                                                                                    class="fa fa-caret-down"></span></button></span>
+                                                                    </div>
+                                                                    <input type="hidden" value="" id="hdnSimpleTermID">
+                                                                </div>
+
                                                             </div>
+
+                                                            <div id="advFilterProgram" class="schoollist">
+                                                                <span class="multiselect-native-select"><select
+                                                                        class="form-control" id="ddlAdvFilterProgram"
+                                                                        multiple="multiple"
+                                                                        data_functionnameonchange="getAdvSearchTerm"
+                                                                        disabled=""></select>
+                                                                    <div class="btn-group"><button type="button"
+                                                                            class="multiselect dropdown-toggle btn btn-default disabled"
+                                                                            data-toggle="dropdown"
+                                                                            title="--- Select ---" disabled=""><img
+                                                                                src="/Images/MVC/TermSummary/Progm_ic.png"><label
+                                                                                class="filterHeader"
+                                                                                for="chklistitemProgram">Sub Program<sup
+                                                                                    style="color: #ff0000">*</sup></label>
+                                                                            <div id="advProgramWarning"
+                                                                                class="warningMsg warningMessage">
+                                                                                *Please select atleast one program</div>
+                                                                        </button>
+                                                                        <ul class="multiselect-container dropdown-menu"
+                                                                            style="display:block;">
+                                                                            <li class="multiselect-item multiselect-filter active"
+                                                                                value="0">
+                                                                                <div class="input-group"><span
+                                                                                        class="input-group-addon"><i
+                                                                                            class="glyphicon glyphicon-search"></i></span><input
+                                                                                        class="form-control multiselect-search"
+                                                                                        type="text"
+                                                                                        placeholder="Search"></div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="multiselect-item multiselect-all active">
+                                                                                <a tabindex="0"
+                                                                                    class="multiselect-all"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox"
+                                                                                            value="multiselect-all">
+                                                                                        Select all</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                        MBA/MSF</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                        MBA-Legacy</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                        MBA-Sub</label></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div id="advFilterProgram" class="schoollist">
+                                                                <span class="multiselect-native-select"><select
+                                                                        class="form-control" id="ddlAdvFilterProgram"
+                                                                        multiple="multiple"
+                                                                        data_functionnameonchange="getAdvSearchTerm"
+                                                                        disabled=""></select>
+                                                                    <div class="btn-group"><button type="button"
+                                                                            class="multiselect dropdown-toggle btn btn-default disabled"
+                                                                            data-toggle="dropdown"
+                                                                            title="--- Select ---" disabled=""><img
+                                                                                src="/Images/MVC/TermSummary/Progm_ic.png"><label
+                                                                                class="filterHeader"
+                                                                                for="chklistitemProgram">Forecasting<sup
+                                                                                    style="color: #ff0000">*</sup></label>
+                                                                            <div id="advProgramWarning"
+                                                                                class="warningMsg warningMessage">
+                                                                                *Please select atleast one program</div>
+                                                                        </button>
+                                                                        <ul class="multiselect-container dropdown-menu"
+                                                                            style="display:block;">
+                                                                            <li class="multiselect-item multiselect-filter active"
+                                                                                value="0">
+                                                                                <div class="input-group"><span
+                                                                                        class="input-group-addon"><i
+                                                                                            class="glyphicon glyphicon-search"></i></span><input
+                                                                                        class="form-control multiselect-search"
+                                                                                        type="text"
+                                                                                        placeholder="Search"></div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="multiselect-item multiselect-all active">
+                                                                                <a tabindex="0"
+                                                                                    class="multiselect-all"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox"
+                                                                                            value="multiselect-all">
+                                                                                        Select all</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                            B2U 10-All</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                            F-All</label></a></li>
+                                                                            <li class="active"><a tabindex="0"><label
+                                                                                        class="checkbox"><input
+                                                                                            type="checkbox" value="18">
+                                                                                            NU-NC B2U-All</label></a></li>
+                                                                                            <li class="active"><a tabindex="0"><label
+                                                                                                class="checkbox"><input
+                                                                                                    type="checkbox" value="18">
+                                                                                                    NU-NC-All</label></a></li>
+                                                                                                    <li class="active"><a tabindex="0"><label
+                                                                                                        class="checkbox"><input
+                                                                                                            type="checkbox" value="18">
+                                                                                                            B2U 15-All</label></a></li>
+                                                                                                            <li class="active"><a tabindex="0"><label
+                                                                                                                class="checkbox"><input
+                                                                                                                    type="checkbox" value="18">
+                                                                                                                    NEU-CRP-All</label></a></li>
+                                                                                                                    <li class="active"><a tabindex="0"><label
+                                                                                                                        class="checkbox"><input
+                                                                                                                            type="checkbox" value="18">
+                                                                                                                            Pearson 10-All</label></a></li>  
+                                                                        </ul>
+                                                                    </div>
+                                                                </span>
+
+                                                            </div>
+
                                                         </div>
                                                         <button type="button" class="search-but">search</button>
                                                     </div>
@@ -3760,6 +3887,155 @@
                             });
                         </script>
                     </div>
+                    <div class="termsummary-grid-panel" style=""></div>
+            
+                    <div class="termsummary-grid-panel" style="">
+            
+                        <div class="col-md-12 clear tablesummary" id="divTermSummary">
+                            <div class="tablesum-head row">
+                                <div class="col-md-11 tablesum-left">
+                                    <h3>Currently Showing - Term Summary</h3>
+                                </div>
+                                <div class="col-md-1  tablesum-right">
+                                    <div class="export termsummary-export" data-for="SimpleSearchData,AdvanceSearchData" data-type="export" data-targetid="termSummary-table,termsummaryGridBU,termSummary-returnratestable,termSummary-keydatestable">
+                                        <img src="/Images/MVC/TermSummary/export.png" alt="Export" title="Export">
+                                        export as
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="advanced-search-filter">
+                        
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs advancedfilter-tab" role="tablist" id="tabSchoolsList" style="display: none;"></ul>
+                        
+                                <!-- Tab panes -->
+                                <div class="termsummaryGridAggregate">
+                                    <div id="termSummary-butable_wrapper" class="dataTables_wrapper no-footer"><div id="termSummary-butable_processing" class="dataTables_processing" style="display: none;"></div><div class="DTFC_ScrollWrapper" style="position: relative; clear: both; height: 156px;"><div class="DTFC_RightWrapper" style="position:absolute; top:0; right:0;" aria-hidden="true"><div class="DTFC_RightHeadWrapper" style="position:relative; top:0; left:0;"><div class="DTFC_RightHeadBlocker DTFC_Blocker" style="position:absolute; top:0; bottom:0;"></div></div><div class="DTFC_RightBodyWrapper" style="position:relative; top:0; left:0; height:0; overflow:hidden;"><div class="DTFC_RightBodyLiner" style="position:relative; top:0; left:0; overflow-y:scroll;"></div></div><div class="DTFC_RightFootWrapper" style="position:relative; top:0; left:0;"><div class="DTFC_RightFootBlocker DTFC_Blocker" style="position:absolute; top:0; bottom:0;"></div></div></div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1537px; padding-right: 0px;"><table class="stripe row-border order-column dataTable no-footer" style="width: 1537px; margin-left: 0px;" role="grid"><thead>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 37px;"><th rowspan="2" style="min-width: 120px; width: 120px;" class="sorting_disabled" colspan="1">Program</th><th rowspan="2" class="sorting_disabled" colspan="1" style="width: 27px;">Term</th><th colspan="3" rowspan="1">Starts</th><th colspan="3" rowspan="1">Conv %</th><th colspan="3" rowspan="1">Non-RS</th><th colspan="4" rowspan="1">Rtn Stud</th><th colspan="3" rowspan="1">Ttl Stud</th><th colspan="3" rowspan="1">Ttl Rev</th><th colspan="3" rowspan="1">RPS</th><th colspan="3" rowspan="1">Avg Cred</th></tr>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 37px;"><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 45px;">Adj Plan</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px;">Bud</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px;">Fcst</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px;">Act</th></tr>
+                                    </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%; max-height: 150px;"><table id="termSummary-butable" class="stripe row-border order-column dataTable no-footer" style="width:100%" role="grid"><thead>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 0px;"><th rowspan="2" style="min-width: 120px; width: 120px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" class="sorting_disabled" colspan="1"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Program</div></th><th rowspan="2" class="sorting_disabled" colspan="1" style="width: 27px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Term</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Starts</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 129px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Conv %</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Non-RS</div></th><th colspan="4" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 201px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rtn Stud</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Ttl Stud</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Ttl Rev</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RPS</div></th><th colspan="3" rowspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 125px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Avg Cred</div></th></tr>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 0px;"><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 45px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Adj Plan</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 22px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Bud</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Fcst</div></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 18px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Act</div></th></tr>
+                                    </thead>
+                                    
+                                <tbody><tr role="row" class="odd" style="height: 32px;"><td rowspan="1" style="">BU&nbsp;16&nbsp;-&nbsp;&nbsp;All&nbsp;Programs</td><td style="">Totals</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0.00%</td><td style="">0.00%</td><td style="">0.00%</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">0</td><td style="">$0.00</td><td style="">$0.00</td><td style="">$0.00</td><td style="">$0.00</td><td style="">$0.00</td><td style="">$0.00</td><td style="">0.00</td><td style="">0.00</td><td style="">0.00</td></tr><tr role="row" class="even" style="height: 32px;"><td rowspan="1">BU&nbsp;16&nbsp;-&nbsp;&nbsp;All&nbsp;Programs</td><td>SP1 20</td><td>0</td><td>0</td><td>0</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr></tbody></table></div></div><div class="DTFC_LeftWrapper" style="position: absolute; top: 0px; left: 0px; width: 209px; height: 1px;" aria-hidden="true"><div class="DTFC_LeftHeadWrapper" style="position:relative; top:0; left:0; overflow:hidden;"><table class="stripe row-border order-column dataTable no-footer DTFC_Cloned" style="width: 100%; margin-left: 0px;" role="grid"><thead><tr class="rgMultiHeaderRow" role="row" style="height: 37px;"><th rowspan="2" style="min-width: 120px; width: 120px;" class="sorting_disabled" colspan="1">Program</th><th rowspan="2" class="sorting_disabled" colspan="1" style="width: 27px;">Term</th></tr><tr class="rgMultiHeaderRow" role="row" style="height: 37px;"></tr></thead></table></div><div class="DTFC_LeftBodyWrapper" style="position: relative; top: 0px; left: 0px; height: 66px; overflow: hidden;"><div class="DTFC_LeftBodyLiner" style="position: relative; top: 0px; left: 0px; overflow: hidden scroll; width: 224px; height: 66px; max-height: 66px;"><table class="stripe row-border order-column dataTable no-footer DTFC_Cloned" style="width: 100%; padding: 0px; margin: 0px;" role="grid"><thead>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 0px;"><th rowspan="2" style="min-width: 120px; width: 120px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" class="sorting_disabled" colspan="1"></th><th rowspan="2" class="sorting_disabled" colspan="1" style="width: 27px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th></tr>
+                                        <tr class="rgMultiHeaderRow" role="row" style="height: 0px;"></tr>
+                                    </thead>
+                                    
+                                <tbody><tr role="row" class="odd" style="height: 32px;" data-dt-row="0"><td rowspan="1" data-dt-row="0" data-dt-column="0" style="">BU&nbsp;16&nbsp;-&nbsp;&nbsp;All&nbsp;Programs</td><td data-dt-row="0" data-dt-column="1" style="">Totals</td></tr><tr role="row" class="even" style="height: 32px;" data-dt-row="1"><td rowspan="1" data-dt-row="1" data-dt-column="0"></td><td data-dt-row="1" data-dt-column="1">SP1 20</td></tr></tbody></table></div></div><div class="DTFC_LeftFootWrapper" style="position:relative; top:0; left:0; overflow:hidden;"></div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <style type="text/css">
+                            /* Ensure that the demo table scrolls */
+                            th, td {
+                                white-space: nowrap;
+                            }
+                        
+                            div.dataTables_wrapper {
+                                margin: 0 auto;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(3) {
+                                background: #feffdb !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(4) {
+                                background: #dfdec9 !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(5) {
+                                background: #c3d79c !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(6) {
+                                background: #ddecff !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(7) {
+                                background: #b2e0f0 !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(8) {
+                                background: #e1d1c2 !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(9) {
+                                background: #dfc2b2 !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th:nth-child(10) {
+                                background: #eca177 !important;
+                                text-align: center;
+                                color: #516270 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.odd {
+                                background: #f3f4f6 !important;
+                            }
+                        
+                            .termsummaryGridAggregate tr.rgMultiHeaderRow:first-child th {
+                                border-right: 2px solid #334b63;
+                            }
+                        
+                            .termsummaryGridAggregate table.dataTable thead th, table.dataTable thead td {
+                                font-weight: 700;
+                            }
+                        
+                            .termsummary-grid-bottompanel div#content {
+                                margin: 0 auto;
+                                width: 95.25%;
+                                background: #334b63;
+                                border-radius: 5px;
+                            }
+                        
+                            .advanced-search-filter-bottom ul.nav-tabs li a {
+                                color: #fff !important;
+                                padding: 8px 15px !important;
+                                min-height: 100% !important;
+                                font-size: 12px;
+                            }
+                        
+                            .advanced-search-filter-bottom ul {
+                                border: none;
+                            }
+                        
+                                .advanced-search-filter-bottom ul.nav-tabs li a {
+                                    color: #fff !important;
+                                    border-right: 1px solid #bdb8b8;
+                                    border-radius:0 !important;
+                                }
+                        
+                                .advanced-search-filter-bottom ul.nav-tabs li:first-child a {
+                                    border-radius: 5px 0px 0px 5px !important;
+                                }
+                        
+                                .advanced-search-filter-bottom ul.nav-tabs li:last-child a {
+                                    border-radius: 0 5px 5px 0 !important;
+                                }
+                        
+                                
+                        </style>
+                                </div>  
+                    
                 </div>
             </section>
 
@@ -4035,7 +4311,7 @@
                         //resetFilterValues();
                         if ($("#ddlAdvFilterSchool").html() === ""
                             && $(this).closest('li').attr('data_searchtype') !== "SimpleSearch") { //load only when it's empty
-                            getAdvancedSearch(termSummary.currentYear);
+                            //getAdvancedSearch(termSummary.currentYear);
                         }
                     });
 
@@ -4547,7 +4823,7 @@
                     -webkit-box-shadow: 1px 1px 6px 1px #dfdfdf;
                     box-shadow: 1px 1px 6px 1px #dfdfdf;
                     float: left;
-                    width: 32%;
+                    width: 21%;
                     background: #fff;
                     margin: 0 2% 0 0;
                     border-radius: 5px;
